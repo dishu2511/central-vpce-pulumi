@@ -110,9 +110,9 @@ def create_vpc(name):
         )
 
     for i, subnet in zip(range(3), private_subnets):
-        route_table_association(subnet, private_route_table, "public")
+        route_table_association(subnet, private_route_table, "private")
     for i, subnet in zip(range(3), public_subnets):
-        route_table_association(subnet, public_route_table, "private")
+        route_table_association(subnet, public_route_table, "public")
 
     # function to create Network ACLs
     def nacl(subnets, type):

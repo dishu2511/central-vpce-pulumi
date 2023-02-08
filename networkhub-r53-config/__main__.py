@@ -9,13 +9,7 @@ with open("./../config.json") as config_file:
 
 NETWORKHUB_VPC_STACK = data["NETWORKHUB_VPC_STACK"]
 SPOKE_VPC_STACK = data["SPOKE_VPC_STACK"]
-
 NETWORKHUB_CIDR_BLOCK = data["NETWORKHUB_CIDR_BLOCK"]
-
-EC2_MESSAGES_ENDPOINT = data["EC2_MESSAGES_ENDPOINT"]
-SSM_MESSAGES_ENDPOINT = data["SSM_MESSAGES_ENDPOINT"]
-SSM_ENDPOINT = data["SSM_ENDPOINT"]
-
 SPOKE_ACCOUNT_ID = data["SPOKE_ACCOUNT_ID"]
 ROLE_NAME = data["ROLE_NAME"]
 REGION = data["REGION"]
@@ -77,6 +71,6 @@ def route53_private_hosted_zone_config(service, endpoint):
     )
 
 
-route53_private_hosted_zone_config("ssm", SSM_ENDPOINT)
-route53_private_hosted_zone_config("ssmmessages", SSM_MESSAGES_ENDPOINT)
-route53_private_hosted_zone_config("ec2messages", EC2_MESSAGES_ENDPOINT)
+route53_private_hosted_zone_config("ssm", f"ssm.{REGION}.amazonaws.com")
+route53_private_hosted_zone_config("ssmmessages", f"ssmmessages.{REGION}.amazonaws.com")
+route53_private_hosted_zone_config("ec2messages", f"ec2messages.{REGION}.amazonaws.com")
