@@ -1,0 +1,6 @@
+name: networkhub-r53-config
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: Stack to create private hosted zones in networkhub

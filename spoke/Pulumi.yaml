@@ -1,0 +1,6 @@
+name: central-vpce-spoke
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: Stack to create VPC inside spoke account

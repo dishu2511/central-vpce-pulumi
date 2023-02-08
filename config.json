@@ -1,0 +1,14 @@
+{
+    "SPOKE_CIDR_BLOCK": "10.1.0.0/16",
+    "NETWORKHUB_CIDR_BLOCK": "10.0.0.0/16",
+    "VPCE_INBOUND_PORT": "443",
+    "NETWORKHUB_VPC_STACK": "networkhub-demo",
+    "SPOKE_VPC_STACK": "spoke-vpc-demo",
+    "EC2_MESSAGES_ENDPOINT": "ec2messages.ap-southeast-2.amazonaws.com",
+    "SSM_MESSAGES_ENDPOINT": "ssmmessages.ap-southeast-2.amazonaws.com",
+    "SSM_ENDPOINT": "ssm.ap-southeast-2.amazonaws.com",
+    "SPOKE_ACCOUNT_ID": "<SPOKE_ACCOUNT_ID>",
+    "NETWORKHUB_ACCOUNT_ID": "<NETWORKHUB_ACCOUNT_ID>",
+    "ROLE_NAME": "pulumi-cross-account-vpce",
+    "REGION": "ap-southeast-2"
+}

@@ -1,0 +1,6 @@
+name: central-vpce-networkhub
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: stack to create networkhub
