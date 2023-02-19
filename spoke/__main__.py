@@ -48,14 +48,6 @@ def create_vpc(name):
             provider=networkhub_provider,
         ),
     )
-    # # creating internet gateway
-    # igw = aws.ec2.InternetGateway(
-    #     f"{name}-igw",
-    #     vpc_id=vpc.id,
-    #     tags={
-    #         "Name": f"{name}-igw",
-    #     },
-    # )
 
     # getting availability zones
     availability_zones = aws.get_availability_zones(state="available")
@@ -108,12 +100,6 @@ def create_vpc(name):
     private_route_table = aws.ec2.RouteTable(
         f"{name}-private-route-table",
         vpc_id=vpc.id,
-        # routes=[
-        #     aws.ec2.RouteTableRouteArgs(
-        #         cidr_block="0.0.0.0/0",
-        #         transit_gateway_id=tgw.id,
-        #     )
-        # ],
         tags={
             "Name": f"{name}-private-route-table",
         },
@@ -124,12 +110,6 @@ def create_vpc(name):
     public_route_table = aws.ec2.RouteTable(
         f"{name}-public-route-table",
         vpc_id=vpc.id,
-        # routes=[
-        #     aws.ec2.RouteTableRouteArgs(
-        #         cidr_block="10.3.0.0/16",
-        #         gateway_id=igw.id,
-        #     )
-        # ],
         tags={
             "Name": f"{name}-public-route-table",
         },
